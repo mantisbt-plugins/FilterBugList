@@ -51,7 +51,11 @@ class FilterBugListField extends MantisFilter {
    public function __construct() {
       $this->title = plugin_lang_get( 'field_label', 'FilterBugList' );
    }   
-   
+
+    /**
+     * @param mixed $p_inputs
+     * @return void
+     */
     public static function inputs( $p_inputs=null ) {
          static $s_inputs = null;
 
@@ -66,7 +70,7 @@ class FilterBugListField extends MantisFilter {
    /**
     * Format the filter input, returning the list cleaned with any separator
     * character.
-    * @param multi $p_filter_input Filter field input
+    * @param mixed $p_filter_input Filter field input
     * @return string the filtered string or null
     */
     public static function format_inputs( $p_filter_input = null ) {
@@ -96,7 +100,7 @@ class FilterBugListField extends MantisFilter {
     * Validate the filter input, returning true if input is
     * valid, or returning false if invalid.  Invalid inputs will
     * be replaced with the filter's default value.
-    * @param multi Filter field input
+    * @param mixed $p_filter_input Filter field input
     * @return boolean Input valid (true) or invalid (false)
     */
    public function validate( $p_filter_input ) {
@@ -107,40 +111,30 @@ class FilterBugListField extends MantisFilter {
    /**
     * Build the SQL query elements 'join', 'where', and 'params'
     * as used by core/filter_api.php to create the filter query.
-    * @param multi Filter field input
+    * @param mixed $p_filter_input Filter field input
     * @return array Keyed-array with query elements; see developer guide
     */
    function query( $p_filter_input ) {
       $t_list = self::format_inputs( $p_filter_input );
 
       if( empty($t_list ) ){
-          return;
+          return [];
       }
       
       $t_bug_table = db_get_table( 'mantis_bug_table' );
-      
 
-      $t_query = array(
+      return array(
          'where' => "$t_bug_table.id IN ( $t_list )",
       );
-
-      return $t_query;
    }
 
    /**
     * Display the current value of the filter field.
-    * @param multi Filter field input
+    * @param mixed $p_filter_value Filter field input
     * @return string Current value output
     */
    function display( $p_filter_value ) {
       return self::format_inputs( $p_filter_value );   
    }
 
-   /**
-    * For list type filters, define a keyed-array of possible
-    * filter options, not including an 'any' value.
-    * @return array Filter options keyed by value=>display
-    */
-   public function options() {
-   }
 }
