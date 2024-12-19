@@ -34,6 +34,10 @@ Use [GitHub Issues](http://github.com/mantisbt-plugins/Announce/issues).
 
 ## Changelog
 
+### 2.1.1 - 2024-12-19
+- Fix deprecation warnings #3 #4
+- Code cleanup
+
 ### 2.1.0 - 2017-01-24
 - Compatibility with Mantis 2.0.0
 
