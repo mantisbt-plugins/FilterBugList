@@ -88,7 +88,7 @@ class FilterBugListField extends MantisFilter {
         } else {
             // Match any types of separator !!! :-)
             // Replace non numbers by the arbitrary space character
-            $t_list = trim(preg_replace( '/[^0-9]/', ' ', $p_filter_input ));
+            $t_list = trim(preg_replace( '/[^0-9]/', ' ', $p_filter_input ?? '' ));
             // replace all series of space characters by a comma separator for the
             // query
             $t_list = preg_replace( '/\s+/', ',', $t_list );
