@@ -29,4 +29,3 @@ $s_plugin_FilterBugList_title = 'Filtrage d\'une liste de bogues ';
 $s_plugin_FilterBugList_description = 'Permet de filtrer des bogues à partir d\'une liste d\'identifiants';
 $s_plugin_FilterBugList_field_label = 'Liste d\'identifiants';
 
-?>

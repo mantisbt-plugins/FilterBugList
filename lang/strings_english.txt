@@ -29,4 +29,3 @@ $s_plugin_FilterBugList_title = 'Filter Bug List';
 $s_plugin_FilterBugList_description = 'Filter a selection by a range of bug id';
 $s_plugin_FilterBugList_field_label = 'Bug List';
 
-?>
