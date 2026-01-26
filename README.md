@@ -34,6 +34,9 @@ Use [GitHub Issues](http://github.com/mantisbt-plugins/Announce/issues).
 
 ## Changelog
 
+### 2.1.2 - 2026-01-26
+- Remove closing PHP tag from language files #5
+
 ### 2.1.1 - 2024-12-19
 - Fix deprecation warnings #3 #4
 - Code cleanup
